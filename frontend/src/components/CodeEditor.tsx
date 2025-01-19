@@ -9,7 +9,7 @@ interface CodeEditorProps {
 
 const CodeEditor: React.FC<CodeEditorProps> = ({ language }) => {
     return (
-        <div style={{ height: '400px', width: '100%' }}>
+        <div style={{ height: '100%' }}>
             <MonacoEditor
                 height="100%"
                 defaultLanguage={language}

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Terminal } from '@xterm/xterm';
+import { FitAddon } from '@xterm/addon-fit';
 import '@xterm/xterm/css/xterm.css';
 
 
@@ -14,13 +15,18 @@ const UserTerminal: React.FC<TerminalProps> = ({ language }) => {
     useEffect(() => {
         if (terminalRef.current) {
             const term = new Terminal();
+            const fitAddon = new FitAddon();
+            term.loadAddon(fitAddon);
             term.open(terminalRef.current);
+
             term.writeln(`Welcome to the ${language} terminal!`);
             term.writeln('Type your code and execute it below:');
         }
     }, [language]);
 
-    return <div ref={terminalRef} style={{ height: '300px', width: '100%' }} />;
+    return (
+        <div ref={terminalRef} style={{ height: '100%' }} />
+    )
 }
 
 

@@ -13,28 +13,47 @@ const AppRoutes: React.FC = () => {
 
                 <Route path="/js" element={
                     <>
-                        <CodeEditor language="javascript" />
-                        <UserTerminal language="javascript" />
+                        <div className="container-fluid d-flex g-0 vh-100">
+                            <div style={{ flex: 0.8 }}>
+                                <CodeEditor language="javascript" />
+                            </div>
+                            <div style={{ flex: 0.2 }}>
+                                <UserTerminal language="javascript" />
+                            </div>
+                        </div>
                     </>
                 } />
 
                 <Route path="/php" element={
                     <>
-                        <CodeEditor language="php" />
-                        <UserTerminal language="php" />
+                        <div className="container-fluid d-flex g-0 vh-100">
+                            <div style={{ flex: 0.8 }}>
+                                <CodeEditor language="php" />
+                            </div>
+                            <div style={{ flex: 0.2 }}>
+                                <UserTerminal language="php" />
+                            </div>
+                        </div>
                     </>
                 } />
 
                 <Route path="/python" element={
                     <>
-                        <CodeEditor language="python" />
-                        <UserTerminal language="python" />
+                        <div className="container-fluid d-flex g-0 vh-100">
+                            <div style={{ flex: 0.8 }}>
+                                <CodeEditor language="python" />
+                            </div>
+                            <div style={{ flex: 0.2 }}>
+                                <UserTerminal language="python" />
+                            </div>
+                        </div>
                     </>
                 } />
             </Routes>
         </BrowserRouter>
     )
 }
+
 
 
 export default AppRoutes;
