@@ -12,7 +12,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ language }) => {
         <div style={{ height: '100%' }}>
             <MonacoEditor
                 height="100%"
-                defaultLanguage={language}
+                language={language}
                 defaultValue="// Start writing your code"
                 theme="vs-dark"
             />

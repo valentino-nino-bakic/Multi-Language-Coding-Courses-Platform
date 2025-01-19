@@ -18,11 +18,21 @@ const UserTerminal: React.FC<TerminalProps> = ({ language }) => {
             const fitAddon = new FitAddon();
             term.loadAddon(fitAddon);
             term.open(terminalRef.current);
+            fitAddon.fit();
 
             term.writeln(`Welcome to the ${language} terminal!`);
             term.writeln('Type your code and execute it below:');
+
+            term.onData(data => {
+                term.write(data);
+            });
+
+            return () => {
+                term.dispose();
+            }
         }
     }, [language]);
+
 
     return (
         <div ref={terminalRef} style={{ height: '100%' }} />

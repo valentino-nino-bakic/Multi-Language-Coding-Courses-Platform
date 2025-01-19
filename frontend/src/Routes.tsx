@@ -1,8 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
+import Navbar from './components/Navbar';
+
 import CodeEditor from './components/CodeEditor';
 import UserTerminal from './components/UserTerminal';
+
 
 
 const AppRoutes: React.FC = () => {
@@ -13,6 +16,7 @@ const AppRoutes: React.FC = () => {
 
                 <Route path="/js" element={
                     <>
+                        <Navbar />
                         <div className="container-fluid d-flex g-0 vh-100">
                             <div style={{ flex: 0.8 }}>
                                 <CodeEditor language="javascript" />
@@ -26,6 +30,7 @@ const AppRoutes: React.FC = () => {
 
                 <Route path="/php" element={
                     <>
+                        <Navbar />
                         <div className="container-fluid d-flex g-0 vh-100">
                             <div style={{ flex: 0.8 }}>
                                 <CodeEditor language="php" />
@@ -39,6 +44,7 @@ const AppRoutes: React.FC = () => {
 
                 <Route path="/python" element={
                     <>
+                        <Navbar />
                         <div className="container-fluid d-flex g-0 vh-100">
                             <div style={{ flex: 0.8 }}>
                                 <CodeEditor language="python" />
